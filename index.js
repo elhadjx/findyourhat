@@ -24,7 +24,7 @@ class Field {
             let direction = prompt('Which way?  ');
             direction = direction.toLowerCase()
             switch (direction) {
-                case 'z':
+                case 'w':
                     if (this.positionY == 0) break;
                     this.positionY--;
                     this.checkHat(this.positionX, this.positionY)
@@ -48,7 +48,7 @@ class Field {
                     this.field[this.positionY][this.positionX] = pathCharacter;
                     this.addHoles(this.hardModeSteps)
                     break;
-                case 'q':
+                case 'a':
                     if (this.positionX == 0) break;
                     this.positionX--;
                     this.checkHat(this.positionX, this.positionY)
