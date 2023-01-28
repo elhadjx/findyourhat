@@ -1,0 +1,19 @@
+{
+  "name": "findyourhat",
+  "version": "1.0.0",
+  "description": "Find Your Hat Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "codecademy",
+    "challenge",
+    "findyourhat"
+  ],
+  "author": "elhadjx",
+  "license": "ISC",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
