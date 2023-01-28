@@ -3,6 +3,8 @@
 
 A simple command-line text-basedgame  built in JavaScript, where the player must navigate a field of holes in order to find their lost hat.
 
+![image](https://github.com/elhadjx/findyourhat/raw/master/media/fyh.png)
+
 ## How to play
  - Run the JavaScript file in a terminal or command line.
  - Use the keys 'z', 'd', 's', and 'q' to move up, right, down, and left, respectively.
