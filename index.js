@@ -10,6 +10,10 @@ const pathCharacter = '*';
 class Field {
     constructor(arr2d) {
         this.field = arr2d;
+        this.positionX = Math.floor(Math.random() * this.field[0].length)
+        this.positionY = Math.floor(Math.random() * this.field.length)
+        this.field[this.positionY][this.positionX] = pathCharacter;
+
     }
 
     print() {
@@ -40,18 +44,14 @@ class Field {
         const randomWidth = Math.floor(Math.random() * generatedFieldArray[0].length)
         generatedFieldArray[randomHeight][randomWidth] = hat;
 
-        //init position
-        generatedFieldArray[0][0] = pathCharacter;
-
-
         return new Field(generatedFieldArray)
     }
 }
 
 
 const myField = Field.generateField(10, 50, 15)
-let positionX = 0
-let positionY = 0
+
+
 let endGame = false;
 
 while (!endGame) {
@@ -61,32 +61,32 @@ while (!endGame) {
     direction = direction.toLowerCase()
     switch (direction) {
         case 'z':
-            if (positionY == 0) break;
-            positionY--;
-            checkHat(positionX, positionY)
-            checkHole(positionX, positionY)
-            myField.field[positionY][positionX] = pathCharacter;
+            if (myField.positionY == 0) break;
+            myField.positionY--;
+            checkHat(myField.positionX, myField.positionY)
+            checkHole(myField.positionX, myField.positionY)
+            myField.field[myField.positionY][myField.positionX] = pathCharacter;
             break;
         case 'd':
-            if (positionX == (myField.field[0].length - 1)) break;
-            positionX++;
-            checkHat(positionX, positionY)
-            checkHole(positionX, positionY)
-            myField.field[positionY][positionX] = pathCharacter;
+            if (myField.positionX == (myField.field[0].length - 1)) break;
+            myField.positionX++;
+            checkHat(myField.positionX, myField.positionY)
+            checkHole(myField.positionX, myField.positionY)
+            myField.field[myField.positionY][myField.positionX] = pathCharacter;
             break;
         case 's':
-            if (positionY == (myField.field.length - 1)) break;
-            positionY++;
-            checkHat(positionX, positionY)
-            checkHole(positionX, positionY)
-            myField.field[positionY][positionX] = pathCharacter;
+            if (myField.positionY == (myField.field.length - 1)) break;
+            myField.positionY++;
+            checkHat(myField.positionX, myField.positionY)
+            checkHole(myField.positionX, myField.positionY)
+            myField.field[myField.positionY][myField.positionX] = pathCharacter;
             break;
         case 'q':
-            if (positionX == 0) break;
-            positionX--;
-            checkHat(positionX, positionY)
-            checkHole(positionX, positionY)
-            myField.field[positionY][positionX] = pathCharacter;
+            if (myField.positionX == 0) break;
+            myField.positionX--;
+            checkHat(myField.positionX, myField.positionY)
+            checkHole(myField.positionX, myField.positionY)
+            myField.field[myField.positionY][myField.positionX] = pathCharacter;
             break;
         default:
             break;
