@@ -1,6 +1,5 @@
 const prompt = require('prompt-sync')({
-    sigint: true,
-    submitOnCharacter: true
+    sigint: true
 });
 
 const hat = '^';
@@ -58,8 +57,8 @@ let endGame = false;
 while (!endGame) {
     console.clear()
     myField.print()
-    let direction = prompt('Which way?');
-    direction = direction.toLowerCase();
+    let direction = prompt('Which way?  ');
+    direction = direction.toLowerCase()
     switch (direction) {
         case 'z':
             if (positionY == 0) break;
